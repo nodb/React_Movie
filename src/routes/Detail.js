@@ -22,14 +22,14 @@ function Detail() {
         <h1>Loading...</h1>
       ) : (
         <div>
-          <Movie
-            key={movies.id}
-            id={movies.id}
-            coverImg={movies.medium_cover_image}
-            title={movies.title}
-            summary={movies.description_full}
-            genres={movies.genres}
-          />
+          <div>{movies.title}</div>
+          <img src={movies.medium_cover_image} alt={movies.title}></img>
+          <div>{movies.description_full}</div>
+          <ul>
+            {movies.genres.map((g) => (
+              <li>{g}</li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
